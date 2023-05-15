@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import { publicRequest, userRequest } from "../requestMethods";
+import { publicRequest } from "../requestMethods";
 import axios from "axios";
 
 import { useState, useEffect } from "react";
@@ -80,7 +80,7 @@ const Register = () => {
     console.log(username, password, email);
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5500/api/auth/register", {
+      await publicRequest.post("auth/register", {
         username: username,
         email: email,
         password: password,

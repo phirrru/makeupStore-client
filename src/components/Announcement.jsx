@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { publicRequest } from "../requestMethods";
 import axios from "axios";
 
 const Container = styled.div`
@@ -26,7 +27,7 @@ const Announcement = () => {
   useEffect(() => {
     const getCats = async () => {
       try {
-        const res = await axios.get("http://localhost:5500/api/cat");
+        const res = await publicRequest.get("/cat");
         setCategories(res.data);
       } catch {}
     };

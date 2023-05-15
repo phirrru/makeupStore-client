@@ -1,7 +1,7 @@
 import styled from "styled-components";
 // import { categories } from "../data";
 import CategoryItem from "./CategoryItem";
-import { publicRequest, userRequest } from "../requestMethods";
+import { publicRequest } from "../requestMethods";
 import axios from "axios";
 
 import { useState, useEffect } from "react";
@@ -19,7 +19,7 @@ const Categories = () => {
   useEffect(() => {
     const getCats = async () => {
       try {
-        const res = await axios.get("http://localhost:5500/api/cat");
+        const res = await publicRequest.get("/cat");
         setCategories(res.data);
       } catch {}
     };

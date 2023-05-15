@@ -1,7 +1,7 @@
 import "./userList.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
-import { userRows } from "../../dummyData";
+// import { userRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { userRequest } from "../../requestMethods";
@@ -16,7 +16,7 @@ const UserList = () => {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const res = await userRequest.get("http://localhost:5500/api/users/");
+        const res = await userRequest.get("users/");
         setUsers(res.data);
       } catch {}
     };
