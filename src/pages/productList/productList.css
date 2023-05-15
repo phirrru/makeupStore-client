@@ -1,0 +1,103 @@
+/* .userList {
+  flex: 4;
+}
+
+.userListUser {
+  display: flex;
+  align-items: center;
+}
+
+.userListImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.userListEdit {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #3bb077;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.userListDelete {
+  color: red;
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  border-collapse: collapse;
+  margin-top: 30px;
+  /* margin-left: 40px; */
+/* margin-right: 40px; */
+/* } */
+
+/* .table td button {
+  display: block;
+  cursor: pointer;
+}
+
+.red_button {
+  background-color: rgb(255, 0, 0);
+  font-weight: 700;
+  border: 0.5px solid;
+  cursor: pointer;
+  color: white; */
+/* } */
+
+/* .table td form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  position: relative;
+  left: 10%;
+}
+
+.table th {
+  font-weight: bold;
+  padding: 5px;
+  background: #efefef;
+  border: 1px solid #dddddd;
+}
+
+.table td {
+  border: 1px solid #dddddd;
+  padding: 5px;
+} */
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+th,
+tr,
+td {
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+}
+
+/* thead th {
+    width: 20%; */
+/* } */
+/* 
+  thead th:nth-child(2) {
+    width: 20%;
+  }
+  
+  thead th:nth-child(3) {
+    width: 15%;
+  }
+  
+  thead th:nth-child(4) {
+    width: 35%;
+  } */
