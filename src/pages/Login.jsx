@@ -92,8 +92,7 @@ const Login = () => {
           <Button onClick={handleClick} disabled={isFetching}>
             ВОЙТИ
           </Button>
-          {error && <Error>Что-то пошло не так...</Error>}
-          {/* <Link>Забыли пароль?</Link> */}
+          {/* {error && <Error>Что-то пошло не так...</Error>} */}
           <Link1>
             <Link to={`/register`}>Создать аккаунт</Link>
           </Link1>

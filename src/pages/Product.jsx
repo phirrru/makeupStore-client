@@ -172,7 +172,6 @@ const Product = () => {
     };
     addProductToCart();
     window.confirm("Продукт успешно добавлен в корзину");
-    // dispatch(addProduct({ ...product, quantity, color }));
   };
   return (
     <Container>
@@ -189,15 +188,6 @@ const Product = () => {
           <Desc>{product.desc}</Desc>
           <Price>{product.price + " ₽"}</Price>
           <FilterContainer>
-            {/* <Filter>
-              <FilterTitle>Оттенок</FilterTitle>
-              <FilterSize onChange={(e) => setColor(e.target.value)}>
-                <FilterSizeOption></FilterSizeOption>
-                {product.color?.map((c) => (
-                  <FilterSizeOption key={c}>{c}</FilterSizeOption>
-                ))}
-              </FilterSize>
-            </Filter> */}
           </FilterContainer>
           {user && (
             <AddContainer>

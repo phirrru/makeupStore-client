@@ -161,38 +161,20 @@ const ButtonDelete = styled.button`
 `;
 
 const Cart = () => {
-  // const products = [];
-  // const cart = useSelector((state) => state.cart);
-  // const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user.currentUser);
-  // const getProducts = async () => {
-  //   try {
-  //     const res = await userRequest.get("cart/findCart/" + user._id);
-  //     console.log(res.data.products);
-  //     products = res.data.products;
-  //   } catch {}
-  // };
-  // getProducts();
 
   const [total, setTotal] = useState();
-  // const [products, setProducts] = useState([]);
   const [products2, setProducts2] = useState([]);
 
-  // const actualProducts = [];
   useEffect(() => {
     const getProducts = async () => {
       try {
-        // const res = await userRequest.get("cart/findCart/" + user._id);
         const res2 = await userRequest.get("cart/findCartProducts/" + user._id);
-        // setProducts(res.data);
         setProducts2(res2.data);
-        // setTotal();
-        // console.log(res.data);
         console.log(res2.data);
       } catch {}
     };
     getProducts();
-    // console.log(products?.products);
     console.log(products2?.products);
 
     const getTotal = async () => {
@@ -204,13 +186,18 @@ const Cart = () => {
     getTotal();
   }, []);
 
-  const handleClick = (deleteProductId) => {
+  const handleClick = (deleteProductId, price, quantity) => {
     // deleteUserId.preventDefault();
     const deleteProduct = async () => {
       try {
         console.log(deleteProductId);
-        const res = await userRequest.delete(
-          "cart/delete_product/" + deleteProductId + "/" + user._id
+        console.log(price, quantity);
+        const res = await userRequest.patch(
+          "cart/delete_product/" + deleteProductId + "/" + user._id,
+          {
+            price: price,
+            quantity: quantity,
+          }
         );
       } catch (err) {
         console.log(err);
@@ -246,19 +233,12 @@ const Cart = () => {
                         <ProductName>
                           <b>Описание:</b> {product?.productId?.desc}
                         </ProductName>
-                        {/* <ProductId>
-                      <b>ID:</b> {product.productId.productId}
-                    </ProductId> */}
-                        <ProductSize>
-                          {/* <b>Оттенок:</b> {product.productId.color} */}
-                        </ProductSize>
+                        <ProductSize></ProductSize>
                       </Details>
                     </ProductDetail>
                     <PriceDetail>
                       <ProductAmountContainer>
-                        {/* <Add /> */}
                         <ProductAmount>{product?.quantity} шт</ProductAmount>
-                        {/* <Remove /> */}
                       </ProductAmountContainer>
                       <ProductPrice>
                         {product?.productId?.price * product.quantity + "р"}
@@ -267,7 +247,11 @@ const Cart = () => {
                         id="delete"
                         type="submit"
                         onClick={() => {
-                          handleClick(product?._id);
+                          handleClick(
+                            product?._id,
+                            product?.productId?.price,
+                            product.quantity
+                          );
                         }}
                       >
                         Удалить
@@ -280,10 +264,6 @@ const Cart = () => {
           </Info>
           <Summary>
             <SummaryTitle>О ЗАКАЗЕ</SummaryTitle>
-            {/* <SummaryItem>
-              <SummaryItemText>Доставка</SummaryItemText>
-              <SummaryItemPrice>400 руб</SummaryItemPrice>
-            </SummaryItem> */}
             <SummaryItem type="total">
               <SummaryItemText>Сумма заказа</SummaryItemText>
               <SummaryItemPrice>{total}</SummaryItemPrice>

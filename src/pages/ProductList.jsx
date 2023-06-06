@@ -53,7 +53,6 @@ const ProductList = () => {
   return (
     <Container>
       <Navbar />
-      {/* <Title>{cat}</Title> */}
       <Link to={`/`}>
         <TopButton>ВЕРНУТЬСЯ В КАТАЛОГ</TopButton>
       </Link>

@@ -17,14 +17,9 @@ export const login = async (dispatch, user) => {
 };
 
 export const logout = async (dispatch, user) => {
-  console.log("2");
-  // dispatch(loginStart());
   try {
     dispatch(logoutUser());
-    // const res = await publicRequest.post("/auth/login", user);
-    // dispatch(loginSuccess(res.data));
   } catch (err) {
-    // dispatch(loginFailure());
     console.log("error");
   }
 };

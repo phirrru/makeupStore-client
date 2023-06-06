@@ -31,7 +31,6 @@ const Home = () => {
   const [search, setSearch] = useState();
   return (
     <div>
-      {/* <Background> */}
       <Navbar />
       <form>
         <SearchContainer>
@@ -39,21 +38,17 @@ const Home = () => {
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Поиск"
           />
-          {/* <button onClick={handleClick}>Искать</button> */}
-          {/* <button> */}
           <Link to={`products/search_${search}`}>
             <button>
               <Search style={{ color: "gray", fontSize: 16 }} />
             </button>
           </Link>
-          {/* </button> */}
         </SearchContainer>
       </form>
       <Categories></Categories>
       <Announcement />
       <Products />
       <Footer />
-      {/* </Background> */}
     </div>
   );
 };

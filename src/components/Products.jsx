@@ -15,7 +15,7 @@ const Container = styled.div`
 
 const Products = ({ cat, sort }) => {
   const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  // const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -29,9 +29,6 @@ const Products = ({ cat, sort }) => {
     getProducts();
   }, [cat]);
 
-  // useEffect(() => {
-  //   cat && setFilteredProducts();
-  // }, [products, cat]);
   useEffect(() => {
     if (sort === "newest") {
       setProducts((prev) =>

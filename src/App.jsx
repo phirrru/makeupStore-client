@@ -31,7 +31,6 @@ function App() {
             path="/cart"
             element={!user ? <Navigate to="/" /> : <Cart />}
           />
-          {/* <Route path="/cart" element={<Cart />} /> */}
           <Route
             path="/login"
             element={user ? <Navigate to="/" /> : <Login />}
