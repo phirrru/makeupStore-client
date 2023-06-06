@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Products from "../components/Products";
-// import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import TopButton from "/Cart";
 
 const Container = styled.div``;
 

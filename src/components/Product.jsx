@@ -1,8 +1,3 @@
-import {
-  FavoriteBorderOutlined,
-  SearchOutlined,
-  ShoppingCartOutlined,
-} from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -51,33 +46,9 @@ const Container = styled.div`
   }
 `;
 
-const Circle = styled.div`
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-`;
-
 const Image = styled.img`
   height: 75%;
   z-index: 2;
-`;
-
-const Icon = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  transition: all 0.5s ease;
-  &:hover {
-    background-color: #e9f5f5;
-    transform: scale(1.1);
-  }
 `;
 
 const H4 = styled.h4`
@@ -89,14 +60,11 @@ const H4 = styled.h4`
 const Product = ({ item }) => {
   return (
     <Container>
-      {/* <Circle /> */}
       <Image src={item.img} />
-      {/* <Icon> */}
       <Link to={`/product/${item._id}`}>
         <Info></Info>
         <TextContainer>
           <H4>{item.title}</H4>
-          {/* <br /> */}
           <H4>{item.price} ₽</H4>
         </TextContainer>
       </Link>

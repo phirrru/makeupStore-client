@@ -60,10 +60,6 @@ const Link1 = styled.a`
   cursor: pointer;
 `;
 
-const Error = styled.span`
-  color: red;
-`;
-
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -92,7 +88,6 @@ const Login = () => {
           <Button onClick={handleClick} disabled={isFetching}>
             ВОЙТИ
           </Button>
-          {/* {error && <Error>Что-то пошло не так...</Error>} */}
           <Link1>
             <Link to={`/register`}>Создать аккаунт</Link>
           </Link1>

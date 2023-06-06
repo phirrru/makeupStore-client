@@ -1,10 +1,8 @@
 import styled from "styled-components";
-// import { popularProducts } from "../data";
 import { publicRequest } from "../requestMethods";
 import Product from "./Product";
 import { useEffect } from "react";
 import { useState } from "react";
-import axios from "axios";
 
 const Container = styled.div`
   padding: 10px;
@@ -15,7 +13,6 @@ const Container = styled.div`
 
 const Products = ({ cat, sort }) => {
   const [products, setProducts] = useState([]);
-  // const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {

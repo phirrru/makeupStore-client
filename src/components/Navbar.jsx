@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import { publicRequest, userRequest } from "../requestMethods";
 import { logout } from "../redux/apiCalls";
 import { useDispatch } from "react-redux";
-// import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -29,23 +28,6 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-`;
-
-const Language = styled.span`
-  font-size: 14px;
-  cursor: pointer;
-`;
-
-const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  padding: 5px;
-`;
-
-const Input = styled.input`
-  border: none;
 `;
 
 const Center = styled.div`
@@ -73,12 +55,10 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
-  const [search, setSearch] = useState();
   const dispatch = useDispatch();
 
   const handleLogout = (e) => {
     console.log("1");
-    // e.preventDefault();
     logout(dispatch);
   };
   const user = useSelector((state) => state.user.currentUser);
@@ -86,18 +66,6 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          {/* <form>
-            <SearchContainer>
-              <Input
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search"
-              />
-              <Search style={{ color: "gray", fontSize: 16 }} />
-              <Link to={`products/search_${search}`}>
-                <button></button>
-              </Link>
-            </SearchContainer>
-          </form> */}
           <Logo>CHOU.</Logo>
         </Left>
         <Center></Center>
@@ -130,13 +98,7 @@ const Navbar = () => {
           {user && (
             <Link to="/cart">
               <MenuItem>
-                {/* <Badge
-                overlap="rectangular"
-                badgeContent={products?.products?.length}
-                color="primary" */}
-                {/* > */}
                 <ShoppingCartOutlined />
-                {/* </Badge> */}
               </MenuItem>
             </Link>
           )}

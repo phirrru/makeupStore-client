@@ -5,8 +5,6 @@ import Navbar from "../components/Navbar";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { publicRequest, userRequest } from "../requestMethods";
-import { useDispatch } from "react-redux";
-import { addProduct } from "../redux/cartRedux";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -51,32 +49,6 @@ const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-
-const Filter = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const FilterTitle = styled.span`
-  font-size: 20px;
-  font-weight: 200;
-`;
-
-const FilterColor = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-  margin: 0px 5px;
-  cursor: pointer;
-`;
-
-const FilterSize = styled.select`
-  margin-left: 10px;
-  padding: 5px;
-`;
-
-const FilterSizeOption = styled.option``;
 
 const AddContainer = styled.div`
   width: 50%;
@@ -131,12 +103,7 @@ const Product = () => {
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
-  // const [price, setPrice] = useState();
-  // console.log(quantity);
-  // console.log(product._id);
   const user = useSelector((state) => state.user.currentUser);
-  // const [color, setColor] = useState("");
-  // const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {

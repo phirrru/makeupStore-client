@@ -1,8 +1,6 @@
 import styled from "styled-components";
-// import { categories } from "../data";
 import CategoryItem from "./CategoryItem";
 import { publicRequest } from "../requestMethods";
-import axios from "axios";
 
 import { useState, useEffect } from "react";
 

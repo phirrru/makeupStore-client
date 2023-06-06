@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { publicRequest } from "../requestMethods";
-import axios from "axios";
-
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/apiCalls";

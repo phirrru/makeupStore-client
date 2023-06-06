@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { publicRequest } from "../requestMethods";
-import axios from "axios";
 
 const Container = styled.div`
   height: 30px;

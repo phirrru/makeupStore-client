@@ -1,15 +1,5 @@
-import {
-  Facebook,
-  Instagram,
-  MailOutline,
-  Phone,
-  Pinterest,
-  Room,
-  Twitter,
-} from "@material-ui/icons";
+import { MailOutline, Phone, Room } from "@material-ui/icons";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const Container = styled.div`
@@ -29,22 +19,6 @@ const Desc = styled.p`
   margin: 20px 0px;
 `;
 
-const SocialContainer = styled.div`
-  display: flex;
-`;
-
-const SocialIcon = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: white;
-  background-color: #${(props) => props.color};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-`;
-
 const Center = styled.div`
   flex: 1;
   padding: 20px;
@@ -53,19 +27,6 @@ const Center = styled.div`
 
 const Title = styled.h3`
   margin-bottom: 30px;
-`;
-
-const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const ListItem = styled.li`
-  width: 50%;
-  margin-bottom: 10px;
 `;
 
 const Right = styled.div`
@@ -77,10 +38,6 @@ const ContactItem = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-`;
-
-const Payment = styled.img`
-  width: 50%;
 `;
 
 const Footer = () => {
@@ -97,38 +54,8 @@ const Footer = () => {
           кожи, и гарантируется качество подлинных продуктов от официальных
           дистрибьюторов.
         </Desc>
-        {/* <SocialContainer>
-          <SocialIcon color="E4405F">
-            <Instagram />
-          </SocialIcon>
-          <SocialIcon color="55ACEE">
-            <Twitter />
-          </SocialIcon>
-        </SocialContainer> */}
       </Left>
-      <Center>
-        {/* <Title>Полезные ссылки</Title>
-        <List>
-          <Link to="/">
-            <ListItem>Каталог</ListItem>
-          </Link>{" "}
-          <br />
-          <br />
-          <Link to="/cart">
-            <ListItem>Корзина</ListItem>
-          </Link>
-          {user && (
-            <Link to="/register">
-              <ListItem>Регистрация</ListItem>
-            </Link>
-          )}
-          {user && (
-            <Link to="/login">
-              <ListItem>Авторизация</ListItem>
-            </Link>
-          )}
-        </List> */}
-      </Center>
+      <Center></Center>
       <Right>
         <Title>Контакты</Title>
         <ContactItem>
@@ -140,7 +67,6 @@ const Footer = () => {
         <ContactItem>
           <MailOutline style={{ marginRight: "10px" }} /> contact@gmail.com
         </ContactItem>
-        {/* <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" /> */}
       </Right>
     </Container>
   );
